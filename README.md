@@ -1,36 +1,37 @@
-# TP de Biométrie — Populations
+# TP Biométrie S5 — Dynamique des Systèmes Écologiques
 
-Ouvrage autonome issu de `BiometrieS5`. Le livre original est conservé.
+Support pédagogique des travaux pratiques de modélisation et de dynamique des populations destinés aux étudiants de Licence 3 Sciences de la Vie (Semestre 5) à La Rochelle Université.
 
-## Contenu
+Ces séances s'inscrivent dans l'UE Biométrie en lien direct avec le cours magistral « Introduction à la dynamique des systèmes » (EC *Fonctionnement des Écosystèmes*), dispensé par Florian Orgeret.
 
-- `index.qmd`
-- `04-Structure.qmd`
-- `05-Cohortes.qmd`
-- `06-DynamicSystems.qmd`
-- `07-MarkovChains.qmd`
-- `references.qmd`
+---
 
-## Personnalisation et publication
+## Accès au manuel en ligne
 
-- `index.qmd` est une copie intégrale de l'introduction actuelle du livre original, y compris ses blocs R. Adapter les objectifs, l'organisation, les intervenants, les dates, la progression et l'évaluation à ce livre.
-- L'auteur dans `_quarto.yml` est conservé tel quel et reste à personnaliser.
-- Le titre et la liste des chapitres sont adaptés. Les chapitres seront numérotés automatiquement au sein de chaque nouveau livre ; leurs noms de fichiers sont conservés.
-- L'ancien `repo-url` a été retiré : renseigner l'adresse du nouveau dépôt lorsqu'il sera publié.
-- Le thème, les extensions et les bibliographies sont copiés. Les ressources locales référencées sont incluses.
-- Aucun rendu ni cache du livre original n'est copié. Aucune compilation n'a été exécutée.
+Le livre complet est consultable à l'adresse suivante :  
+https://besibo.github.io/BiometrieS5-Populations/
 
-## Renvois à adapter après la séparation
+---
 
-Les renvois suivants ciblent des sections absentes de cet ouvrage. Ils sont conservés dans les sources pour permettre leur adaptation lors de la personnalisation de l'introduction. Aucune adresse de publication n'est inventée.
+## Contenu des séances
 
-| Fichier | Ligne | Renvoi |
-|---|---:|---|
-| `index.qmd` | 230 | `@sec-moy1` |
-| `index.qmd` | 230 | `@sec-exo1` |
-| `index.qmd` | 232 | `@sec-moy2` |
-| `index.qmd` | 232 | `@sec-moy3` |
+1. **TP 1 — Structure et démographie des populations** (`01-Structure.qmd`)  
+   Modèles de capture-marquage-recapture (CJS avec `marked`) et matrices de projection démographique (`popbio`).
 
-## Point préexistant à vérifier avant compilation
+2. **TP 2 — Analyse de cohortes** (`02-Cohortes.qmd`)  
+   Décomposition de distributions polymodales (`mixdist`), courbes de croissance, de survie et courbes d'Allen.
 
-Dans `05-Cohortes.qmd`, ligne 81, le chemin est écrit `Data/Nassarius.csv`, alors que le dossier s'appelle `data`. Ce point est conservé pour garder les chapitres identiques à l'original ; il faudra harmoniser la casse avant une compilation sur un système sensible à la casse.
+3. **TP 3 — Systèmes dynamiques** (`03-DynamicSystems.qmd`)  
+   Modèles discrets et continus, croissance logistique, dynamique prédateurs-proies (Lotka-Volterra) et compétition interspécifique.
+
+4. **TP 4 — Chaînes de Markov et successions écologiques** (`04-MarkovChains.qmd`)  
+   Matrices de transition écologique, simulations paysagères et calcul de l'état stationnaire.
+
+---
+
+## Compilation
+
+Pour générer le site localement avec Quarto :
+
+```powershell
+quarto render --to html

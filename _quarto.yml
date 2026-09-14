@@ -3,18 +3,21 @@ project:
   output-dir: docs
 
 book:
-  title: "TP de Biométrie — Populations<br> Semestre 5<br>"
-  author: "Benoît Simon-Bouhet"
+  title: "TP de Biométrie — Semestre 5<br> Dynamique des Systèmes Écologiques"
+  author: 
+    - name: "Benoît Simon-Bouhet"
+    - name: "Florian Orgeret"
+  repo-url: https://github.com/besibo/BiometrieS5-Populations
   date: now
   date-format: "dddd D MMMM YYYY"
   search: true
   downloads: pdf
   chapters:
     - index.qmd
-    - 04-Structure.qmd
-    - 05-Cohortes.qmd
-    - 06-DynamicSystems.qmd
-    - 07-MarkovChains.qmd
+    - 01-Structure.qmd
+    - 02-Cohortes.qmd
+    - 03-DynamicSystems.qmd
+    - 04-MarkovChains.qmd
     - references.qmd
 
 bibliography: all.bib
