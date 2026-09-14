@@ -1,0 +1,19 @@
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+
+/.quarto/
+Corrections/
+**/*.quarto_ipynb
+
+# Rendus et fichiers temporaires
+/docs/
+/cache/
+/figure/
+*_files/
+*.aux
+*.log
+*.toc
+*.tex
+.DS_Store
