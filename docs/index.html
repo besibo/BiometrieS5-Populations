@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.39">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Benoît Simon-Bouhet">
+
+<title>TP de Biométrie — Populations  Semestre 5 </title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./04-Structure.html" rel="next">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-9ea0a49c779b6fc496fdb60b6bf00fef.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-29754e15dbacfca2d3d83cea9d48121f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "Pas de résultats",
+    "search-matching-documents-text": "documents trouvés",
+    "search-copy-link-title": "Copier le lien vers la recherche",
+    "search-hide-matches-text": "Cacher les correspondances additionnelles",
+    "search-more-match-text": "correspondance de plus dans ce document",
+    "search-more-matches-text": "correspondances de plus dans ce document",
+    "search-clear-button-title": "Effacer",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Annuler",
+    "search-submit-button-title": "Envoyer",
+    "search-label": "Recherche"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Basculer la barre latérale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Introduction</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Basculer la barre latérale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Recherche" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">TP de Biométrie — Populations<br> Semestre 5<br></h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Auteur</div>
+      <div class="quarto-title-meta-contents">
+               <p>Benoît Simon-Bouhet </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Dernière Mise à jour</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">lundi 14 septembre 2026</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">TP de Biométrie — Populations<br> Semestre 5<br></a> 
+        <div class="sidebar-tools-main">
+    <a href="./TP-de-Biométrie-—-Populations-br--Semestre-5-br-.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Recherche"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Introduction</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-Structure.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Structure des populations</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-Cohortes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Analyse de cohortes</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-DynamicSystems.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Systèmes dynamiques</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07-MarkovChains.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Les Chaînes de Markov</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Références</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table des matières</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a>
+  <ul class="collapse">
+  <li><a href="#objectifs" id="toc-objectifs" class="nav-link" data-scroll-target="#objectifs">Objectifs</a></li>
+  <li><a href="#pré-requis" id="toc-pré-requis" class="nav-link" data-scroll-target="#pré-requis">Pré-requis</a></li>
+  <li><a href="#organisation" id="toc-organisation" class="nav-link" data-scroll-target="#organisation">Organisation</a>
+  <ul class="collapse">
+  <li><a href="#volume-de-travail" id="toc-volume-de-travail" class="nav-link" data-scroll-target="#volume-de-travail">Volume de travail</a></li>
+  <li><a href="#modalités-denseignement" id="toc-modalités-denseignement" class="nav-link" data-scroll-target="#modalités-denseignement">Modalités d’enseignement</a></li>
+  <li><a href="#comment-communiquer" id="toc-comment-communiquer" class="nav-link" data-scroll-target="#comment-communiquer">Comment communiquer</a></li>
+  </ul></li>
+  <li><a href="#progression-conseillée" id="toc-progression-conseillée" class="nav-link" data-scroll-target="#progression-conseillée">Progression conseillée</a></li>
+  <li><a href="#quelques-mots-sur-les-ia-génératives" id="toc-quelques-mots-sur-les-ia-génératives" class="nav-link" data-scroll-target="#quelques-mots-sur-les-ia-génératives">Quelques mots sur les IA génératives</a></li>
+  <li><a href="#évaluations" id="toc-évaluations" class="nav-link" data-scroll-target="#évaluations">Évaluation(s)</a></li>
+  <li><a href="#licence" id="toc-licence" class="nav-link" data-scroll-target="#licence">Licence</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+
+<section id="introduction" class="level1 unnumbered">
+<h1 class="unnumbered">Introduction</h1>
+<section id="objectifs" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="objectifs">Objectifs</h2>
+<p>Ce livre contient l’ensemble du matériel (contenus, exemples, exercices…) nécessaire à la réalisation des travaux pratiques de <strong>Biométrie</strong> de l’EC <em>Outils pour l’étude et la compréhension du vivant 4</em> du semestre 5 de la licence Sciences de la Vie de La Rochelle Université.</p>
+<p>À la fin du semestre, vous devriez être capables de faire les choses suivantes dans <code>RStudio</code> :</p>
+<ul>
+<li>Mettre en forme des tableaux de données : renommer des variables, en créer de nouvelles, modifier des variables existantes, filtrer des lignes, sélectionner des colonnes, etc. (vu au semestre 3)</li>
+<li>Explorer des jeux de données en produisant des graphiques appropriés selon la nature des variables disponibles, leur nombre et l’objectif recherché (vu au semestre 3)</li>
+<li>Explorer des jeux de données en produisant des résumés statistiques de variables de différentes natures (numériques continues ou catégorielles) et pour différentes modalités de facteurs d’intérêt (vu au semestre 4)</li>
+<li>Calculer des indices de position (moyennes, médianes…), de dispersion (écarts-types, variances, IQR…) et d’incertitude (erreurs standard, intervalles de confiance…) pour plusieurs sous-groupes de vos jeux de données, et les représenter sur des graphiques adaptés (vu au semestre 4)</li>
+<li>Choisir et formuler des hypothèses adaptées à la question scientifique posée (hypothèses bilatérales ou unilatérales)</li>
+<li>Choisir les tests statistiques permettant de répondre à une question scientifique précise selon la nature de la question posée et la nature des variables à disposition</li>
+<li>Réaliser les tests usuels de comparaison de moyennes (<span class="math inline">\(t\)</span> de Student à 1 ou 2 échantillons, appariés ou indépendants…)</li>
+<li>Vérifier les conditions d’application des tests (graphiquement et avec des tests appropriés tels que les tests de Shapiro-Wilk et de Levene), et le cas échéant, réaliser des tests non paramétriques équivalents (test de Welch, de Wilcoxon…)</li>
+<li>Interpréter correctement les résultats des tests pour répondre aux questions scientifiques posées</li>
+<li>Identifier des cohortes dans une population et en étudier les caractéristiques et l’évolution temporelle</li>
+<li>Simuler le comportement de populations théoriques simples suivant des modèles démographiques précis (mortalité exponentielle, croissance exponentielle, croissance logistique, système prédateur-proies de Lotka et Volterra, et systèmes de compétition à 2 ou 3 espèces…)</li>
+<li>Simuler, par chaînes de Markov, les successions écologiques dans un écosystème théorique</li>
+</ul>
+</section>
+<section id="pré-requis" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="pré-requis">Pré-requis</h2>
+<p>Pour atteindre les objectifs fixés ici, et compte tenu du volume horaire restreint qui est consacré aux TP de Biométrie au S5, je suppose que vous possédez un certain nombre de pré-requis. En particulier, vous devriez avoir à ce stade une bonne connaissance de l’interface du logiciel <code>RStudio</code>, et vous devriez être capables :</p>
+<ol type="1">
+<li>de créer un <code>Rproject</code> et un script d’analyse dans <code>RStudio</code></li>
+<li>d’importer des jeux de données issus de tableurs dans <code>RStudio</code></li>
+<li>d’effectuer des manipulations de données simples (sélectionner des variables, trier des colonnes, filtrer des lignes, créer de nouvelles variables, etc.)</li>
+<li>de produire des graphiques de qualité, adaptés à la fois aux variables dont vous disposez et aux questions auxquelles vous souhaitez répondre</li>
+<li>de réaliser une exploration statistique de vos données en calculant des indices de position, de dispersion et d’incertitude pour plusieurs sous-groupes de vos données</li>
+</ol>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Si ces pré-requis ne sont pas maîtrisés
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Mettez-vous à niveau de toute urgence en lisant attentivement :</p>
+<ul>
+<li><a href="https://besibo.github.io/BiometrieS3/">le livre en ligne de Biométrie du semestre 3</a></li>
+<li><a href="https://besibo.github.io/BiometrieS4/">le livre en ligne de Biométrie du semestre 4</a></li>
+</ul>
+<p>Vous aurez de toutes façons besoin de vous référer à ces 2 documents régulièrement au cours de ces TP. Donc gardez-les à portée de main et apprenez à naviguer rapidement dans leurs chapitres et sous-chapitres pour retrouver facilement les informations dont vous avez besoin.</p>
+</div>
+</div>
+</section>
+<section id="organisation" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="organisation">Organisation</h2>
+<section id="volume-de-travail" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="volume-de-travail">Volume de travail</h3>
+<p>Les travaux pratiques de biométrie auront lieu entre le 14 septembre et le 09 décembre 2026. Durant cette période, vous n’aurez jamais plus d’un créneau d’1h30 de TP (pour chaque groupe) par semaine, et deux séances consécutives sont souvent espacées de deux semaines ou plus. Vous devrez donc prendre l’habitude de prévoir, dans vos emplois du temps, des plages de travail personnel régulières, afin de ne pas oublier tout ce que vous avez appris entre deux séances de TP.</p>
+<p><strong>Les séances de TP ont lieu soit en salle MSI 217, soit dans les salles du Pôle Communication Multimédia Réseau (PCMR), dans les salles Sc1 à Sc7 ou en salle Info Trans.</strong></p>
+<p>Au total, chaque groupe aura 9 séances de TP, soit un total de 13,5 heures prévues dans vos emplois du temps. C’est peu pour atteindre les objectifs fixés et il y aura donc évidemment du travail personnel à fournir en dehors de ces séances. Comme indiqué ci-dessus, vous devrez prévoir du temps, et vos prédécesseurs consacraient en moyenne entre une et trois heures de travail personnel pour chaque séance de TP prévue dans leur emploi du temps. Comme pour les semestres précédents, Ce travail personnel et régulier est essentiel pour progresser dans cette matière. J’insiste sur l’importance de faire l’effort dès maintenant : vous allez en effet avoir des enseignements qui reposent sur l’utilisation de ces logiciels jusqu’à la fin du S6 (y compris pendant vos stages et, très vraisemblablement, dans vos futurs masters également). C’est donc maintenant qu’il faut acquérir des automatismes, cela vous fera gagner énormément de temps ensuite.</p>
+<p>Ces 9 séances de travaux pratiques seront assurées par 2 intervenants : Benoît Simon-Bouhet et Florian Orgeret. La particularité de ces TP de biométrie du semestre 5, c’est qu’ils contiennent deux parties presque indépendantes. Les chapitres 1, 2, et 3 illustrent les cours et les TD de Biométrie. Ils seront assurés par Benoit Simon-Bouhet. Les chapitres 4, 5, 6 et 7 illustrent les cours de Fonctionnement des écosystèmes. Ils seront assurés par Florian Orgeret. Ces deux blocs étant relativement indépendants, ils auront lieu en parallèle sur le semestre. Vous pourrez donc avoir, en alternance, des séances avec ces deux intervenants, mais elles ne sont pas interchangeables, car leurs modalités pédagogiques ne sont pas interchangeables (voir plus bas). Vous devrez donc vérifier sur vos emplois du temps quel intervenant assure chaque séance de TP.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Soyez vigilant : les deux intervenants ne traitent pas les mêmes chapitres, et les modalités pédagogiques qu’ils utilisent ne sont pas les mêmes. Assurez-vous donc que vous avez préparé/travaillé les bons chapitres aux bons moments.</p>
+</div>
+</div>
+</section>
+<section id="modalités-denseignement" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="modalités-denseignement">Modalités d’enseignement</h3>
+<p>Pour suivre cet enseignement, vous pourrez utiliser les ordinateurs de l’université, mais je ne peux que vous encourager à utiliser vos propres ordinateurs, sous Windows, Linux ou MacOS. Lors de vos futurs stages et pour rédiger vos comptes rendus de TP, vous utiliserez le plus souvent vos propres ordinateurs, autant prendre dès maintenant de bonnes habitudes en installant les logiciels dont vous aurez besoin tout au long de votre licence. Si vous n’avez pas suivi les cours de biométrie de L2 et que les logiciels <code>R</code> et <code>RStudio</code> ne sont pas encore installés sur vos ordinateurs, suivez <a href="https://besibo.github.io/BiometrieS3/01-R-basics.html#sec-install">la procédure décrite ici</a>. Si vous ne possédez pas d’ordinateur, manifestez-vous rapidement auprès de moi car des solutions existent (prêt par l’université, travail sur tablette ou chromebook via <a href="https://posit.cloud">Posit cloud</a>…).</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Séances assurées par Benoît Simon-Bouhet
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>L’essentiel du contenu de cet enseignement peut être abordé en autonomie, à distance, grâce à ce livre en ligne, aux ressources mises à disposition sur Moodle et à votre ordinateur personnel. Cela signifie que <strong>la présence physique lors des TP n’est pas obligatoire pour toutes les séances</strong>.</p>
+</div>
+</div>
+<p>Plus que des séances de TP classiques, considérez plutôt qu’il s’agit de <strong>permanences non-obligatoires</strong> : si vous pensez avoir besoin d’aide, si vous avez des points de blocage ou des questions sur le contenu de ce document ou sur les exercices demandés, alors venez poser vos questions lors des séances de TP. Vous ne serez d’ailleurs pas tenus de rester pendant 1h30 : si vous obtenez une réponse en 10 minutes et que vous préférez travailler ailleurs, vous serez libres de repartir !</p>
+<p>De même, si vous n’avez pas de difficulté de compréhension, que vous n’avez pas de problème avec les exercices de ce livre en ligne ni avec les quiz Moodle, votre présence n’est pas requise. Si vous souhaitez malgré tout venir en salle de TP, pas de problème, vous y serez toujours les bienvenus.</p>
+<p>Ce fonctionnement très souple a de nombreux avantages :</p>
+<ul>
+<li>vous vous organisez comme vous le souhaitez</li>
+<li>vous ne venez que lorsque vous en avez vraiment besoin</li>
+<li>celles et ceux qui se déplacent reçoivent une aide personnalisée</li>
+<li>vous travaillez sur vos ordinateurs</li>
+<li>les effectifs étant réduits, c’est aussi plus confortable pour moi !</li>
+</ul>
+<p>Toutefois, pour que cette organisation fonctionne, cela demande de la rigueur de votre part, en particulier sur la régularité du travail que vous devez fournir. Si la présence en salle de TP n’est pas requise, <strong>le travail demandé est bel et bien obligatoire</strong> ! Si vous venez en salle de TP sans avoir travaillé en amont, votre venue sera totalement inutile puisque vous n’aurez pas de question à poser et que vous passerez votre séance à lire et suivre ce livre en ligne, choses que vous pouvez très bien faire chez vous. Vous perdrez donc votre temps, celui de vos collègues, et le mien. De même, si vous attendez la 4e semaine pour vous y mettre, vous irez droit dans le mur. Je le répète, outre les heures de TP/TEA prévues dans vos emplois du temps, vous devez prévoir au moins 20 heures de travail personnel supplémentaire.</p>
+<p>Je vous laisse donc une grande liberté d’organisation. À vous d’en tirer le maximum et de faire preuve du sérieux nécessaire. Le rythme auquel vous devriez avancer est présenté dans la partie suivante intitulée “Progression conseillée”.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Séances assurées par Florian Orgeret : attention !
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Le mode “permanence non obligatoire” n’est valable que pour les 5 séances de TP de Benoît Simon-Bouhet, qui portent sur les tests de comparaison de moyennes. Pour les 4 séances de Florian Orgeret, qui portent sur le cours de fonctionnement des écosystèmes, votre présence physique est requise en salle informatique. Leur contenu étant plus éloigné de ce que vous avez déjà vu dans vos précédents enseignements de biométrie, votre présence en salle de TP est donc <strong>obligatoire</strong>, comme pour un TP classique.</p>
+<p>Pensez donc bien à vérifier quel intervenant doit assurer votre prochain TP afin de ne pas commettre d’impair !</p>
+</div>
+</div>
+<!-- ### Utilisation de Slack {-}
+
+Outre les séances de permanence non-obligatoires, nous échangerons aussi sur [l'application Slack](https://slack.com/intl/fr-fr/), qui fonctionne un peu comme un "twitter privé". Slack facilite la communication des équipes et permet de travailler ensemble. Créez-vous un compte en ligne et installez le logiciel sur votre ordinateur (il existe aussi des versions pour tablettes et smartphones). Lorsque vous aurez installé le logiciel, [cliquez sur ce lien](https://join.slack.com/t/l3sv25-26/shared_invite/zt-3e5w5venb-ksvbjpQfhF9h~yBUFKBlBg) pour vous connecter à notre espace de travail commun intitulé `L3 SV 25-26` (ce lien expire régulièrement : faites-moi signe s'il n'est plus valide). 
+
+Vous verrez que 3 "chaînes" sont disponibles :
+
+- \#général : c'est là que les questions liées à l'organisation générale du cours, des TP et TEA, des évaluations, etc. doivent être posées. Si vous ne savez pas si une séance de permanence a lieu, posez la question ici.
+- \#questions-rstudio : c'est ici que toutes les questions pratiques liées à l'utilisation de `R` et `RStudio` devront être posées. Problèmes de syntaxe, problèmes liés à l'interface, à l'installation des packages ou à l'utilisation des fonctions, à la création des graphiques, à la manipulation des tableaux... Tout ce qui concerne directement les logiciels sera traité ici. Vous êtes libres de poser des questions, de poster des captures d'écran, des morceaux de code, des messages d'erreur. Et **vous êtes bien entendu vivement encouragés à vous entraider et à répondre aux questions de vos collègues.** Je n'interviendrai ici que pour répondre aux questions laissées sans réponse ou si les réponses apportées sont inexactes. Le fonctionnement est celui d'un forum de discussion instantané. Vous en tirerez le plus grand bénéfice en participant et en n'ayant pas peur de poser des questions, même si elles vous paraissent idiotes. Rappelez-vous toujours que si vous vous posez une question, d'autres se la posent aussi probablement.
+- \#questions-stats : C'est ici que vous pourrez poser vos questions liées aux méthodes statistiques ou aux choix des modèles de dynamique des populations. Tout ce qui ne concerne pas directement l'utilisation du logiciel (comme par exemple le choix d'un test ou des hypothèses nulles et alternatives, la démarche d'analyse, la signification de tel paramètre ou estimateur, le principe de telle ou telle méthode...) peut être discuté ici. Comme pour le canal \#questions-rstudio, **vous êtes encouragés à vous entraider et à répondre aux questions de vos collègues**.
+
+Ainsi, quand vous travaillerez à vos TP ou TEA, que vous soyez installés chez vous ou en salle de TP, prenez l'habitude de garder Slack ouvert sur votre ordinateur. Même si vous n'avez pas de question à poser, votre participation active pour répondre à vos collègues est souhaitable et souhaitée. Je vous incite donc fortement à vous **entraider** : c'est très formateur pour celui qui explique, et celui qui rencontre une difficulté a plus de chances de comprendre si c'est quelqu'un d'autre qui lui explique plutôt que la personne qui a rédigé les instructions mal comprises. -->
+</section>
+<section id="comment-communiquer" class="level3">
+<h3 class="anchored" data-anchor-id="comment-communiquer">Comment communiquer</h3>
+<p>Lors de vos séances de travail, en cas de question, merci de nous contacter directement par email. Vous pouvez joindre des copies de votre code et de vos éventuels messages d’erreurs, ainsi que des copies d’écran si besoin.</p>
+<p>Sachez toutefois qu’afin d’éviter de recevoir les mêmes questions de nombreuses fois, nos réponses pourront être adressées à l’ensemble de la promotion. Ainsi, tout le monde en profite, et tout le monde progresse en même temps.</p>
+<p>Ce document est fait pour vous permettre d’avancer en autonomie et vous ne devriez normalement pas avoir beaucoup besoin de nous si votre lecture est attentive. L’expérience montre en effet que la plupart du temps, il suffit de lire correctement les paragraphes précédents et/ou suivants pour obtenir la réponse à ses questions. Lors des séances de TP au format “permanence”, j’essaie de rester disponible par mail, mais je réponds évidemment en priorité à celles et ceux qui seront physiquement présents en salle. Cela signifie néanmoins que <strong>même si votre groupe n’est pas en TP, vos questions ont des chances d’être lues et de recevoir des réponses dès que d’autres groupes sont en TP</strong>. Vous pouvez d’ailleurs vous-même envoyer vos questions directement à toute la promotion : vous aurez ainsi plus de chances que quelqu’un vous réponde rapidement.</p>
+</section>
+</section>
+<section id="progression-conseillée" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="progression-conseillée">Progression conseillée</h2>
+<p>Si vous avez suivi le document de prise en main de <code>R</code> et <code>RStudio</code> lors de l’EC de biométrie du semestre 3 de la licence SV de La Rochelle, vous savez que pour apprendre à utiliser ces logiciels, il faut faire les choses soi-même, ne pas avoir peur des messages d’erreurs (il faut d’ailleurs apprendre à les déchiffrer pour comprendre d’où viennent les problèmes), essayer maintes fois, se tromper beaucoup, recommencer, et surtout, ne pas se décourager. J’utilise ce logiciel presque quotidiennement depuis près de 20 ans et à chaque session de travail, je rencontre des messages d’erreur. Avec suffisamment d’habitude, on apprend à les déchiffrer et on corrige les problèmes en quelques secondes. Ce livre est conçu pour vous faciliter la tâche, mais ne vous y trompez pas, vous rencontrerez des difficultés, et c’est normal. C’est le prix à payer pour profiter de la puissance du meilleur logiciel permettant d’analyser des données, de produire des graphiques de qualité et de réaliser toutes les statistiques dont vous aurez besoin d’ici la fin de vos études et au-delà.</p>
+<p>Pour que cet apprentissage soit le moins problématique possible, il convient de prendre les choses dans l’ordre. C’est la raison pour laquelle les chapitres 1, 2 et 3 d’une part, et 4, 5, 6 et 7 d’autre part, doivent être lus dans l’ordre, et les exercices d’application faits au fur et à mesure de la lecture.</p>
+<p>Idéalement, voilà les étapes que vous devriez avoir franchies chaque semaine :</p>
+<ol type="1">
+<li><p>Les deux premières séances sont consacrées à la comparaison de la moyenne d’une population à une valeur théorique (<a href="https://besibo.github.io/BiometrieS5-Statistiques/01-OneSampleTests.html#sec-moy1">chapitre 1 du livre Statistiques</a>). Si vous êtes déjà capable d’importer et manipuler des données dans <code>R</code>, ainsi que de les explorer graphiquement et par le calcul d’indices de statistiques descriptives (indices de position, de dispersion et d’incertitude), les fonctions nouvelles seront peu nombreuses. Mais ce chapitre est l’occasion d’aborder des notions complexes (test paramétrique ou non, hypothèses nulles et alternatives, <span class="math inline">\(p-\)</span>value, décision, erreurs, puissance, etc.) qui demanderont une lecture très attentive. C’est également la première fois que vous serez confronté à toutes les étapes d’une analyse de données : de l’importation des données dans <code>RStudio</code> jusqu’à la réalisation des tests statistiques et leur interprétation, en passant par le calcul des statistiques descriptives appropriées, la réalisation de graphiques exploratoires pertinents, et la vérification des conditions d’application du test. La maîtrise du logiciel n’est donc ici qu’une petite partie de ce qui est demandé : maîtriser les notions et concepts, comprendre la démarche d’analyse, être capable de l’expliquer et de la reproduire, est ici crucial. Évidemment, si vous ne disposez pas des bases essentielles à la compréhension des commandes de ce chapitre, vous devrez trouver le temps de (re)lire les livres en ligne <a href="https://besibo.github.io/BiometrieS3/">du semestre 3</a> et <a href="https://besibo.github.io/BiometrieS4/">du semestre 4</a>. Avant votre troisième séance de TP, vous devriez ainsi avoir atteint la fin du chapitre 1, et vous devriez avoir terminé l’exercice d’application de la section <a href="https://besibo.github.io/BiometrieS5-Statistiques/01-OneSampleTests.html#sec-exo1">exercice d’application</a>.</p></li>
+<li><p>Les deux séances suivantes sont consacrées à la comparaison de la moyenne de 2 populations, dans deux situations : lorsque les données des deux groupes sont appariées (<a href="https://besibo.github.io/BiometrieS5-Statistiques/02-TwoSamplePairedTests.html#sec-moy2">chapitre 2 du livre Statistiques</a>) et quand elles sont indépendantes (<a href="https://besibo.github.io/BiometrieS5-Statistiques/03-TwoSampleTests.html#sec-moy3">chapitre 3 du livre Statistiques</a>). Ces chapitres seront également l’occasion d’aborder la notion de test unilatéral et bilatéral et d’apprendre comment coder des hypothèses alternatives spécifiques dans <code>RStudio</code>. Comme pour les semaines précédentes, vous aurez l’occasion de mettre en œuvre la totalité de la démarche d’analyse statistique, et dans chaque chapitre, un ou deux exercices d’application vous sont également proposés.</p></li>
+</ol>
+<p>Avant votre cinquième séance de TP, vous devriez donc être capable de choisir la procédure adaptée afin de comparer la moyenne d’une population à une valeur théorique, ou de comparer la moyenne de 2 populations, dans le cas où vous disposez d’échantillons appariés et dans le cas où les échantillons sont indépendants. Dans toutes ces situations, vous devrez être capable de vérifier les conditions d’application des tests paramétriques, et de choisir des tests non-paramétriques équivalents si les conditions d’application ne sont pas vérifiées. Vous devrez évidemment aussi être capables d’interpréter les résultats de ces tests. Et bien sûr, avant de faire chaque type de test, vous devrez aussi toujours penser au préalable à examiner les données graphiquement (à l’aide de graphiques adaptés), et par le biais des statistiques descriptives décrites au semestre 4 et rappelées plus haut (indices de position, de dispersion et d’incertitude).</p>
+<p>C’est moi (Benoît Simon-Bouhet) qui assurerai ces 4 séances de TP. Les 3 séances suivantes, assurées par Florian Orgeret, sont consacrées à la mise en pratique des notions vues dans le cours magistral de Population Dynamics (EC “Fonctionnement des Écosystèmes”).</p>
+<ol start="3" type="1">
+<li><p>La cinquième séance est consacrée à l’analyse de cohortes (<a href="05-Cohortes.html" class="quarto-xref"><span>2&nbsp; Analyse de cohortes</span></a>). Avant votre sixième séance de TP, vous devriez être en mesure de réaliser l’analyse de cohorte d’une population étudiée pendant plusieurs années afin de produire les courbes de croissance, de survie et d’Allen d’une cohorte d’intérêt. Vous devrez en particulier importer et mettre en forme des données issues d’un suivi de terrain, produire les structures démographiques instantanées à chaque date d’échantillonnage, faire les décompositions polymodales afin de récupérer les informations utiles au sujet de la cohorte dont on souhaite assurer le suivi et enfin, produire, pour cette cohorte, les courbes de croissance, de mortalité et d’Allen.</p></li>
+<li><p>La sixième séance est consacrée à l’étude des systèmes dynamiques (<a href="06-DynamicSystems.html" class="quarto-xref"><span>3&nbsp; Systèmes dynamiques</span></a>). Vous devrez coder différents modèles d’évolution d’une population (mortalité exponentielle, croissance exponentielle, croissance logistique) ou de plusieurs populations ou espèces (modèle prédateurs-proies, modèle de compétition). Ces modèles généreront des données que vous devrez représenter graphiquement. Vous devrez enfin modifier la valeur de certains paramètres de ces modèles pour comprendre leur influence sur le comportement des systèmes dynamiques étudiés. Pour la première fois, vous utiliserez donc <code>RStudio</code> pour produire des données qui suivent un modèle que vous spécifierez, au lieu d’importer des données déjà disponibles. L’objectif est ici de vous montrer comment utiliser le logiciel pour étudier le comportement de modèles théoriques de dynamique des populations, et de vous permettre d’évaluer l’importance et la sensibilité des conditions initiales et des valeurs des paramètres des modèles.</p></li>
+<li><p>La septième et dernière séance est consacrée à l’utilisation des chaînes de Markov dans un contexte d’écologie des communautés (<a href="07-MarkovChains.html" class="quarto-xref"><span>4&nbsp; Les Chaînes de Markov</span></a>). Vous verrez comment utiliser <code>RStudio</code> pour coder une chaîne de Markov permettant d’étudier les successions écologiques et l’atteinte de l’état d’équilibre d’un écosystème abritant plusieurs communautés végétales. Comme pour la semaine précédente, vous devrez coder le système, représenter graphiquement les résultats de simulation, et examiner les conséquences de changements des conditions initiales ou des probabilités de transitions entre communautés. Comme toujours, l’objectif est donc double : vous permettre de découvrir de nouvelles possibilités d’analyses réalisables avec <code>R</code> et <code>RStudio</code>, et vous permettre de mieux comprendre les notions fondamentales abordées dans les cours magistraux.</p></li>
+</ol>
+</section>
+<section id="quelques-mots-sur-les-ia-génératives" class="level2">
+<h2 class="anchored" data-anchor-id="quelques-mots-sur-les-ia-génératives">Quelques mots sur les IA génératives</h2>
+<p>J’attire votre attention sur l’utilisation des IA génératives. La plupart des modèles conversationnels (Large Language Models, LLMs) tels que ChatGPT, Gemini, Claude… sont très bons pour générer du code. Je vous mets néanmoins en garde : si vous ne comprenez pas ce qui est expliqué dans ces pages, vous ne pourrez pas juger de la pertinence du code que les IA pourraient vous fournir. Vous pouvez donc vous faire aider par l’IA pour corriger votre code par exemple, ou pour obtenir des suggestions, mais <strong>il est de votre responsabilité de comprendre ce que vous faites et ce que l’IA fait pour vous</strong> ! Non seulement c’est ce qui vous fera gagner du temps à terme (acceptez de passer du temps maintenant, pour comprendre les notions et concepts, afin de gagner beaucoup de temps plus tard), mais surtout, c’est ce qui vous évitera de faire beaucoup d’erreurs ! Encore cette année, la plupart de nos étudiants de M1 ont utilisé l’IA pour calculer un indice statistique un peu exotique. Presque aucun ne s’est rendu compte que le code produit par l’IA ne faisait pas ce qui était demandé. Par conséquent, toute une partie de leur compte rendu de TP n’avait aucun sens et ils ont donc été lourdement pénalisés à cause de leur confiance aveugle en l’IA. Produire soi-même un code, et demander l’aide de l’IA pour corriger un bug ou demander des améliorations précises, c’est très différent de ne produire aucun code et de demander à l’IA de tout faire. Dans un cas, on fait travailler son cerveau, et l’IA joue le rôle d’un partenaire qui fournit des suggestions souvent pertinentes. Dans l’autre, le cerveau reste au repos, on n’apprend rien, et donc, on perd son temps…</p>
+<p>Vous devez donc faire preuve d’esprit critique vis-à-vis de ces outils, qui peuvent être très utiles, mais qui demandent la plus grande vigilance et qui se trompent régulièrement. Or, pour faire preuve d’esprit critique, vous devez être en mesure de comprendre le code fourni par ces IA. Si ça n’est pas le cas, reprenez les explications de ce livre en ligne : tout ce dont vous avez besoin s’y trouve noir sur blanc.</p>
+<p>Par ailleurs, <strong>si vous utilisez l’IA pour générer du code, vous devez l’indiquer clairement</strong>, et ça doit rester relativement rare. Quelle(s) partie(s) de vos scripts sont réellement de vous, et quelles parties ont été générées par une IA ? À votre niveau, je vous assure qu’il m’est très facile de savoir si du code a été produit par une IA ou par vous. Si vous n’indiquez pas que du code que vous intégrez à vos scripts n’est pas de vous, c’est de la fraude qui peut faire l’objet de sanctions importantes (passage devant le conseil de discipline de l’établissement par exemple). Donc encore une fois, vous pouvez utiliser ces outils, mais à la double condition que (i) ça soit fait à bon escient (assurez-vous que ce qui est produit par l’IA est pertinent, que ça a du sens, et que ça reste rare), et (ii), vous indiquiez clairement dans vos scripts quelles lignes ont été produites à l’aide d’une IA (et laquelle).</p>
+<p>Enfin, je me permets une dernière mise en garde. De plus en plus d’études démontrent un effet négatif de l’utilisation excessive des LLMs sur la qualité des apprentissages chez les étudiant·es. Par exemple, <a href="https://www.sciencedirect.com/science/article/pii/S0747563224002541">cet article (Stadler et al.&nbsp;2024)</a> montre que</p>
+<blockquote class="blockquote">
+<p>Bien que les LLM puissent réduire la charge cognitive associée à la collecte d’informations au cours d’une tâche d’apprentissage, ils ne favorisent pas un engagement profond avec le contenu étudié, pourtant nécessaire à un apprentissage durable et de qualité.</p>
+</blockquote>
+<p>De même, <a href="https://arxiv.org/abs/2506.08872">Kosmyna et al.&nbsp;(2025)</a> ont étudié, par électro-encéphalogramme, les performances cognitives de 3 groupes de participants lors d’exercices de productions écrites (rédaction de synthèses scientifiques). Un groupe avait le droit d’utiliser les IA, un groupe était limité à l’utilisation de Google, un autre groupe n’avait aucun accès à ces outils numériques. Globalement, les participants du groupe LLM sont de loin ceux qui obtiennent les moins bons résultats, qui comprennent et retiennent le moins bien ce qu’ils ont fait. Ceux qui n’avaient droit à aucun outil sont ceux qui ont le plus appris car ils ont dû s’investir pleinement dans l’exercice. En particulier, les auteurs soulignent ceci :</p>
+<blockquote class="blockquote">
+<p>Les utilisateurs d’un LLM ont eu du mal à citer correctement leurs propres travaux. Si les LLM offrent une facilité immédiate, nos résultats mettent en évidence des coûts cognitifs potentiels. Sur une période de quatre mois, les utilisateurs d’un LLM ont systématiquement enregistré des résultats inférieurs aux niveaux neuronal, linguistique et comportemental.</p>
+</blockquote>
+<p>Bref, ces outils sont puissants, ils sont parfois très utiles (et ils vont continuer de s’améliorer), mais ils doivent être utilisés intelligemment pour éviter des conséquences très contre-productives pour vos apprentissages. Là encore, c’est à vous de faire preuve de maturité pour en tirer le meilleur !</p>
+</section>
+<section id="évaluations" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="évaluations">Évaluation(s)</h2>
+<p>L’évaluation de la partie “Biométrie” de l’EC “Outils pour l’étude et la compréhension du vivant” aura lieu dans le cadre du travail de stratégie d’échantillonnage que vous mettez en œuvre avec Pierrick Bocher. Une évaluation <strong>formative</strong> servira à évaluer 3 choses :</p>
+<ul>
+<li>les grands principes de stratégie d’échantillonnage abordés par Pierrick Bocher</li>
+<li>la mise en œuvre de méthodes statistiques adaptées pour répondre aux questions scientifiques posées, telles que nous les traitons en Biométrie</li>
+<li>la maîtrise du logiciel <code>RStudio</code> pour réaliser les analyses de données pertinentes (de l’importation des données et leur mise en forme dans le logiciel, à la réalisation et l’interprétation correcte des tests statistiques appropriés, en passant par l’exploration des statistiques descriptives et la création de graphiques informatifs). Pour ce dernier volet, vous devrez rendre, en plus de votre compte rendu, votre script d’analyse. C’est ce script qui me permettra d’évaluer votre niveau de compétence et de maîtrise de l’outil, tant sur la forme du script (lisibilité, structure, reproductibilité, etc.) que sur le fond (pertinence des analyses réalisées).</li>
+</ul>
+<p>Pour vous aider à comprendre ce qui est attendu, je vous fournis ci-dessous la grille critériée dont je me servirai pour évaluer votre travail. C’est cette même grille qui sera utilisée au semestre 6 dans le cadre de l’évaluation sommative pour la biométrie. Je ne peux donc que vous encourager à lire attentivement les critères d’évaluation ci-dessous et à tenter de vous les approprier. Les séances de TP et de TEA qui viennent doivent vous permettre de vous entraîner à produire des scripts de qualité, et à y intégrer des analyses pertinentes et correctement interprétées.</p>
+<p><img src="images/Grille.jpg" class="img-fluid"></p>
+</section>
+<section id="licence" class="level2">
+<h2 class="anchored" data-anchor-id="licence">Licence</h2>
+<p>Ce livre en ligne est sous licence Creative Commons (<a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.fr">CC BY-NC-ND 4.0</a>)</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.fr"><img src="images/cc_licence.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></a></p>
+</figure>
+</div>
+<p>Vous êtes autorisé à partager, copier, distribuer et communiquer ce matériel par tous moyens et sous tous formats, tant que les conditions suivantes sont respectées :</p>
+<ul class="fa-ul">
+<li>
+<span class="fa-li"><i class="fa-brands fa-creative-commons-by fa-xl" aria-hidden="true"></i></span> <strong>Attribution</strong> : vous devez créditer ce travail (donc citer son auteur), fournir un lien vers ce livre en ligne, intégrer un lien vers la licence Creative Commons et indiquer si des modifications du contenu original ont été effectuées. Vous devez indiquer ces informations par tous les moyens raisonnables, sans toutefois suggérer que l’auteur vous soutient ou soutient la façon dont vous avez utilisé son travail.
+</li>
+<li>
+<span class="fa-li"><i class="fa-brands fa-creative-commons-nc-eu fa-xl" aria-hidden="true"></i></span> <strong>Pas d’Utilisation Commerciale</strong> : vous n’êtes pas autorisé à faire un usage commercial de cet ouvrage, ni de tout ou partie du matériel le composant. Cela comprend évidemment la diffusion sur des plateformes de partage telles que studocu.com qui tirent profit d’œuvres dont elles ne sont pas propriétaires, souvent à l’insu des auteurs.
+</li>
+<li>
+<span class="fa-li"><i class="fa-brands fa-creative-commons-nd fa-xl" aria-hidden="true"></i></span> <strong>Pas de modifications</strong> : dans le cas où vous effectuez un remix, que vous transformez, ou créez à partir du matériel composant l’ouvrage original, vous n’êtes pas autorisé à distribuer ou mettre à disposition l’ouvrage modifié.
+</li>
+<li>
+<span class="fa-li"><i class="fa-solid fa-unlock-alt fa-xl" aria-hidden="true"></i></span> <strong>Pas de restrictions complémentaires</strong> : vous n’êtes pas autorisé à appliquer des conditions légales ou des mesures techniques qui restreindraient légalement autrui à utiliser cet ouvrage dans les conditions décrites par la licence.
+</li>
+</ul>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copié");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copié");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+          // target, if specified
+          link.setAttribute("target", "_blank");
+          if (link.getAttribute("rel") === null) {
+            link.setAttribute("rel", "noopener");
+          }
+          // default icon
+          link.classList.add("external");
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./04-Structure.html" class="pagination-link" aria-label="Structure des populations">
+        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Structure des populations</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+<script src="site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

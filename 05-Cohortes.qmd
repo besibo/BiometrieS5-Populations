@@ -19,9 +19,7 @@ Le suivi démographique des populations animales est extrêmement fréquent dans
 Ici, une population de gastéropodes *Nassarius reticulatus* (la nasse réticulée) a été suivie pendant 5 ans. Deux sessions d'échantillonnage ont été organisées chaque année depuis 2010 : la première a été réalisée en mars, juste après le recrutement des juvéniles, et la seconde a été réalisée 6 mois plus tard, en septembre. Tous les échantillons ont été collectés au même endroit, selon la même méthode (collecte systématique de tous les individus présents à l'intérieur de 10 quadrats positionnés aléatoirement dans la zone d'étude), lors d'une marée basse de fort coefficient (marées de printemps et d'automne). Les individus échantillonnés ont été mesurés sur place, de la base, à l'apex de la coquille (voir @fig-nasse) à l'aide d'un pied à coulisse (précision : centième de millimètre) et relâchés sur place.
 
 
-::: {.column-margin}
-![Coquille de nasse réticulée *Nassarius reticulatus* (Linnaeus, 1758)](images/Nassarius.png){#fig-nasse}
-:::
+![Coquille de nasse réticulée *Nassarius reticulatus* (Linnaeus, 1758)](images/Nassarius.png){#fig-nasse .column-margin}
 
 
 L'espèce étudiée présente les caractéristiques suivantes :

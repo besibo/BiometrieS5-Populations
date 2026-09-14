@@ -8,7 +8,6 @@ Corrections/
 **/*.quarto_ipynb
 
 # Rendus et fichiers temporaires
-/docs/
 /cache/
 /figure/
 *_files/

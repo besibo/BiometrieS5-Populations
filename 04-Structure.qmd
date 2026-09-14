@@ -360,3 +360,5 @@ ggplot(df_comparaison, aes(x = Annee, y = Effectif_Total, color = Scenario, line
   theme_minimal() +
   theme(legend.position = "bottom")
 ```
+
+:::
