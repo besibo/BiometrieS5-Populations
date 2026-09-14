@@ -1,7 +1,4 @@
----
-title: "Structure des populations"
-format: html
----
+# Structure des populations {#sec-structure}
 
 ## Objectifs 
 
