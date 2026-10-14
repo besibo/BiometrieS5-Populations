@@ -155,7 +155,7 @@ Vous aurez de toutes façons besoin de vous référer à ces 2 documents réguli
 
 **Environnement de travail** : Vous pouvez utiliser les postes informatiques de l'université ou votre propre ordinateur portable (Windows, macOS, Linux). Assurez-vous d'avoir installé les packages listés au début de ce document (`tidyverse`, `popbio`, `mixdist`, `marked`).
 
-# Contenu des séances
+# Contenu détaillé des séances
 
 1. **Séance consacrée à la structure et à la démographie des populations** (@sec-structure). Vous aborderez deux approches fondamentales pour quantifier et projeter la dynamique d'une population structurée. Dans un premier temps, vous utiliserez des données de suivi individuel (capture-marquage-recapture) sur le cincle plongeur pour estimer, via les modèles de Cormack-Jolly-Seber (CJS) avec le package marked, les taux de survie apparente et les probabilités de recapture en tenant compte d'effets temporels ou de covariables. Dans un second temps, vous construirez des matrices de transition démographique (matrices de Leslie et de Lefkovitch) à l'aide du package popbio. Vous projetterez la dynamique d'espèces à cycle de vie contrasté (baleine franche, tortue de Floride), calculerez le taux intrinsèque d'accroissement ($\lambda$), la structure d'âge stable, ainsi que les sensibilités et élasticités des différents paramètres du cycle de vie. L'objectif est de vous apprendre à lier l'estimation empirique de paramètres démographiques de terrain à la modélisation prédictive matricielle pour éclairer la gestion et la conservation des populations.
 

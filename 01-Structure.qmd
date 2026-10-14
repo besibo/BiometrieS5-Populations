@@ -137,9 +137,10 @@ whale
 >
 > * Les lignes représentent le temps $t+1$.
 >
-> * La **première ligne** contient la fécondité (seules les adultes matures se reproduisent, avec un taux de 0.04).
+> * **La première ligne contient les taux de fertilité / recrutement** :
+> La quasi-totalité des naissances provient des femelles matures ($F = 0.1132$). Les grands juvéniles présentent une fécondité résiduelle minime ($F = 0.0043$), traduisant quelques mises bas précoces en transition vers le stade adulte.Les yearlings et les femelles post-reproductives ne se reproduisent pas ($F = 0$).
 >
-> * Les **autres lignes** contiennent les probabilités de survie et de passage d'un stade à l'autre.
+> * Les **autres lignes** contiennent les probabilités de survie et de transition (ex. survie sans changer de stade sur la diagonale, maturation sur la sous-diagonale, ou entrée en ménopause à $0.0452$).
 
 ### Étape 2 : Cinétique et Projection Démographique
 

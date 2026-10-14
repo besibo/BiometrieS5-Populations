@@ -2,7 +2,7 @@
 
 ## Objectifs
 
-Cette section doit permettre d'illustrer la partie du cours de Population Dynamics de l'EC "Fonctionnement des écosystèmes" consacrée à l'analyse des cohortes. Vous utiliserez les tailles corporelles d'individus échantillonnés sur le terrain à plusieurs dates pour :
+Cette section doit permettre d'illustrer la partie du cours de Dynamique des systèmes de l'EC "Fonctionnement des écosystèmes" consacrée à l'analyse des cohortes. Vous utiliserez les tailles corporelles d'individus échantillonnés sur le terrain à plusieurs dates pour :
 
 1. Produire la structure démographique instantanée de la population pour chaque date d'échantillonnage
 2. Réaliser la décomposition polymodale pour identifier les cohortes à chaque date d'échantillonnage
