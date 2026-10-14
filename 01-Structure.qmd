@@ -281,6 +281,20 @@ Vous êtes chargé de diagnostiquer la viabilité de la population de Cincles pl
 
 * Vous disposez de la survie adulte réelle estimée par votre modèle CMR (**$\Phi = 0.56$**).
 
+::: {.callout-note}
+## Point R : La fonction `matrix()` et sa documentation
+
+Pour organiser des données en un tableau à deux dimensions (lignes et colonnes), R utilise la fonction de base `matrix()`.
+
+- **Consulter la documentation (`?matrix`)** : en tapant `?matrix` dans votre console, l'onglet *Help* s'ouvre. Deux sections sont essentielles à repérer :
+  - **Usage** : présente la syntaxe type et les valeurs par défaut des paramètres (`matrix(data = NA, nrow = 1, ncol = 1, byrow = FALSE, ...)`).
+  - **Arguments** : détaille l'action de chaque argument sur la construction du tableau.
+- **Comment fonctionne la fonction** :
+  - Le premier argument reçoit le vecteur de données à ranger : `c(...)`.
+  - `nrow = 2` indique le nombre de lignes souhaité.
+  - `byrow = TRUE` : par défaut, R range les valeurs colonne par colonne (`byrow = FALSE`). Passer cet argument à `TRUE` indique à R de remplir la matrice **ligne par ligne** (de gauche à droite, puis de haut en bas). C'est très pratique : cela permet d'écrire les chiffres dans le script exactement comme on les visualise sur un brouillon.
+:::
+
 Construisez la matrice de Leslie correspondante ($2 \times 2$ : Juvéniles, Adultes) :
 
 ```{r cincle-matrix, eval=FALSE}
