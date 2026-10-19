@@ -314,7 +314,7 @@ lambda(mat_cincle)
 
 
 ::: {.callout-note collapse="true"}
-#### Défi : Modéliser le décrochage des trajectoires temporelles [Optionnel - Niveau Avancé]
+#### Défi : Modéliser le décrochage des trajectoires temporelles
 
 Un écart de $\lambda$ abstrait (1.010 vs 0.969) ne parle pas toujours aux décideurs. Pour convaincre un gestionnaire, rien ne vaut une courbe de projection comparée.
 
