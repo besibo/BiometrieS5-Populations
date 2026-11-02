@@ -607,4 +607,41 @@ Assurez-vous que vous avez bien compris chaque étape de la méthode décrite po
 
 Il ne vous reste donc plus qu'à reproduire ce travail pour les 9 autres dates d'échantillonnage afin (i) de récupérer les valeurs d'abondance, de taille et de masse moyenne des individus de la cohorte d'intérêt (celle qui a été recrutée en mars 2010) et (ii) de compléter les 3 courbes que nous avons commencées plus haut.
 
+## Questions de réflexion et d'interprétation
+
+
+### Interprétation de la courbe d'Allen
+
+
+À l'aide de la courbe d'Allen produite pour la cohorte recrutée en mars 2010 (@fig-biomasse) :
+
+a. **Trajectoire démographique :** Décrivez l'allure générale de la courbe en distinguant trois grandes phases : les tout premiers stades de vie, la phase adulte intermédiaire et la fin de vie de la cohorte. À quels processus biologiques majeurs (croissance, prédation, sénescence) correspondent ces variations de pente ?
+
+b. **Sens géométrique des grandeurs :**
+   - Que représente concrètement la **surface totale située sous la courbe d'Allen** en termes de flux d'énergie et de matière au sein du réseau trophique ?
+   - Que représente l'aire du rectangle formé par les coordonnées d'un point $(w_i, N_i)$ et l'origine du repère $(0,0)$ ?
+
+c. **Identification visuelle de l'optimum :** Sans faire de calcul supplémentaire, repérez visuellement le point de la courbe pour lequel ce rectangle $(N \times w)$ semble présenter la surface maximale. À quelle date et à quelle taille moyenne d'individus cela correspond-il approximativement ?
+
+
+---
+
+
+### Pour aller plus loin (Optionnel) : Taux de renouvellement et gestion du stock
+
+La courbe d'Allen permet de quantifier les bilans énergétiques et de définir des stratégies de gestion de populations exploitées (conchyliculture, pêche à pied).
+
+a. **Calcul de la production et de la biomasse moyenne :**
+   En utilisant la méthode numérique des trapèzes sur vos données, estimez :
+   - La production somatique totale ($P$) élaborée par la cohorte au cours de ses 4,5 années de suivi.
+   - La biomasse moyenne pondérée par le temps ($\bar{B}$).
+   - Le taux de renouvellement annuel ($P/\bar{B}$). Comparez cette valeur à ce que l'on attend théoriquement pour une espèce dont l'espérance de vie est de l'ordre de 5 ans.
+
+b. **Optimisation de la récolte :**
+   Tracez l'évolution temporelle de la biomasse totale de la cohorte ($B = N \times w$) en fonction des dates d'échantillonnage.
+   - À quelle date exacte la biomasse disponible atteint-elle son pic maximal ? 
+   - Quelles sont alors la taille moyenne et la masse moyenne des coquillages ?
+   - En gestion des stocks, comment qualifie-t-on une récolte réalisée bien avant cette date optimale ? Et quel inconvénient y aurait-il à attendre un an de plus après ce pic ?
+
+
 Bon courage !

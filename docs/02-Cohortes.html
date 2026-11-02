@@ -286,6 +286,11 @@ window.Quarto = {
   <li><a href="#courbe-dallen" id="toc-courbe-dallen" class="nav-link" data-scroll-target="#courbe-dallen"><span class="header-section-number">2.12</span> Courbe d’Allen</a></li>
   <li><a href="#relation-allométrique" id="toc-relation-allométrique" class="nav-link" data-scroll-target="#relation-allométrique"><span class="header-section-number">2.13</span> Relation allométrique</a></li>
   <li><a href="#à-vous-de-jouer" id="toc-à-vous-de-jouer" class="nav-link" data-scroll-target="#à-vous-de-jouer"><span class="header-section-number">2.14</span> À vous de jouer !</a></li>
+  <li><a href="#questions-de-réflexion-et-dinterprétation" id="toc-questions-de-réflexion-et-dinterprétation" class="nav-link" data-scroll-target="#questions-de-réflexion-et-dinterprétation"><span class="header-section-number">2.15</span> Questions de réflexion et d’interprétation</a>
+  <ul class="collapse">
+  <li><a href="#interprétation-de-la-courbe-dallen" id="toc-interprétation-de-la-courbe-dallen" class="nav-link" data-scroll-target="#interprétation-de-la-courbe-dallen"><span class="header-section-number">2.15.1</span> Interprétation de la courbe d’Allen</a></li>
+  <li><a href="#pour-aller-plus-loin-optionnel-taux-de-renouvellement-et-gestion-du-stock" id="toc-pour-aller-plus-loin-optionnel-taux-de-renouvellement-et-gestion-du-stock" class="nav-link" data-scroll-target="#pour-aller-plus-loin-optionnel-taux-de-renouvellement-et-gestion-du-stock"><span class="header-section-number">2.15.2</span> Pour aller plus loin (Optionnel) : Taux de renouvellement et gestion du stock</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -1074,6 +1079,40 @@ Figure&nbsp;2.9: Courbe d’Allen d’une cohorte de la population de <em>Nassar
 </div>
 <p>Assurez-vous que vous avez bien compris chaque étape de la méthode décrite pour l’échantillonnage de mars 2010, et pourquoi on fait les choses présentées ici dans l’ordre où on les fait. À ce stade, vous devriez déjà avoir un script assez long qui devrait contenir la plupart des commandes évoquées plus haut. Vous devriez donc pouvoir reproduire ces étapes pour toutes les autres dates d’échantillonnage en faisant des copier-coller et en modifiant quelques éléments précis (dates, nom des objets, valeurs de tailles moyennes pour les cohortes, etc.). Attention aussi à adopter une structure de script la plus claire possible, afin de pouvoir corriger les éventuels bugs ou problèmes plus facilement.</p>
 <p>Il ne vous reste donc plus qu’à reproduire ce travail pour les 9 autres dates d’échantillonnage afin (i) de récupérer les valeurs d’abondance, de taille et de masse moyenne des individus de la cohorte d’intérêt (celle qui a été recrutée en mars 2010) et (ii) de compléter les 3 courbes que nous avons commencées plus haut.</p>
+</section>
+<section id="questions-de-réflexion-et-dinterprétation" class="level2" data-number="2.15">
+<h2 data-number="2.15" class="anchored" data-anchor-id="questions-de-réflexion-et-dinterprétation"><span class="header-section-number">2.15</span> Questions de réflexion et d’interprétation</h2>
+<section id="interprétation-de-la-courbe-dallen" class="level3" data-number="2.15.1">
+<h3 data-number="2.15.1" class="anchored" data-anchor-id="interprétation-de-la-courbe-dallen"><span class="header-section-number">2.15.1</span> Interprétation de la courbe d’Allen</h3>
+<p>À l’aide de la courbe d’Allen produite pour la cohorte recrutée en mars 2010 (<a href="#fig-biomasse" class="quarto-xref">Figure&nbsp;<span>2.9</span></a>) :</p>
+<ol type="a">
+<li><p><strong>Trajectoire démographique :</strong> Décrivez l’allure générale de la courbe en distinguant trois grandes phases : les tout premiers stades de vie, la phase adulte intermédiaire et la fin de vie de la cohorte. À quels processus biologiques majeurs (croissance, prédation, sénescence) correspondent ces variations de pente ?</p></li>
+<li><p><strong>Sens géométrique des grandeurs :</strong></p>
+<ul>
+<li>Que représente concrètement la <strong>surface totale située sous la courbe d’Allen</strong> en termes de flux d’énergie et de matière au sein du réseau trophique ?</li>
+<li>Que représente l’aire du rectangle formé par les coordonnées d’un point <span class="math inline">\((w_i, N_i)\)</span> et l’origine du repère <span class="math inline">\((0,0)\)</span> ?</li>
+</ul></li>
+<li><p><strong>Identification visuelle de l’optimum :</strong> Sans faire de calcul supplémentaire, repérez visuellement le point de la courbe pour lequel ce rectangle <span class="math inline">\((N \times w)\)</span> semble présenter la surface maximale. À quelle date et à quelle taille moyenne d’individus cela correspond-il approximativement ?</p></li>
+</ol>
+<hr>
+</section>
+<section id="pour-aller-plus-loin-optionnel-taux-de-renouvellement-et-gestion-du-stock" class="level3" data-number="2.15.2">
+<h3 data-number="2.15.2" class="anchored" data-anchor-id="pour-aller-plus-loin-optionnel-taux-de-renouvellement-et-gestion-du-stock"><span class="header-section-number">2.15.2</span> Pour aller plus loin (Optionnel) : Taux de renouvellement et gestion du stock</h3>
+<p>La courbe d’Allen permet de quantifier les bilans énergétiques et de définir des stratégies de gestion de populations exploitées (conchyliculture, pêche à pied).</p>
+<ol type="a">
+<li><strong>Calcul de la production et de la biomasse moyenne :</strong> En utilisant la méthode numérique des trapèzes sur vos données, estimez :
+<ul>
+<li>La production somatique totale (<span class="math inline">\(P\)</span>) élaborée par la cohorte au cours de ses 4,5 années de suivi.</li>
+<li>La biomasse moyenne pondérée par le temps (<span class="math inline">\(\bar{B}\)</span>).</li>
+<li>Le taux de renouvellement annuel (<span class="math inline">\(P/\bar{B}\)</span>). Comparez cette valeur à ce que l’on attend théoriquement pour une espèce dont l’espérance de vie est de l’ordre de 5 ans.</li>
+</ul></li>
+<li><strong>Optimisation de la récolte :</strong> Tracez l’évolution temporelle de la biomasse totale de la cohorte (<span class="math inline">\(B = N \times w\)</span>) en fonction des dates d’échantillonnage.
+<ul>
+<li>À quelle date exacte la biomasse disponible atteint-elle son pic maximal ?</li>
+<li>Quelles sont alors la taille moyenne et la masse moyenne des coquillages ?</li>
+<li>En gestion des stocks, comment qualifie-t-on une récolte réalisée bien avant cette date optimale ? Et quel inconvénient y aurait-il à attendre un an de plus après ce pic ?</li>
+</ul></li>
+</ol>
 <p>Bon courage !</p>
 
 
@@ -1085,6 +1124,7 @@ Macdonald, Peter, et with contributions from Juan Du. 2018. <em>mixdist: Finite 
 Wickham, Hadley, Mara Averick, Jennifer Bryan, et al. 2019. <span>«&nbsp;Welcome to the <span>tidyverse</span>&nbsp;»</span>. <em>Journal of Open Source Software</em> 4 (43): 1686. <a href="https://doi.org/10.21105/joss.01686">https://doi.org/10.21105/joss.01686</a>.
 </div>
 </div>
+</section>
 </section>
 
 
