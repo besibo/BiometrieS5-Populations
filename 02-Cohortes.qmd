@@ -295,7 +295,7 @@ res_01
 `mix()` : réalise la décomposition polymodale. La fonction identifie une combinaison de distributions Normales qui s'ajuste le mieux possible aux données observées compte tenu des données brutes et des caractéristiques approximatives de chaque distribution Normale fournie par l'utilisateur.
 :::
 
-La fonction `mix()` peut produire quelques avertissements. Ignorez-les à ce stade : seuls les messages d'erreurs sont problématiques et nous y reviendrons plus tard. L'objet `res_01` contient donc les résultats de la décomposition polymodale. C'est une liste de 3 éléments dont seul le premier nous intéresse.^[Il s'appelle `parameters`, sans majuscule, même si `R` affiche son nom avec une majuscule. Vous pouvez le vérifier en tapant `str(res_01)`.  
+La fonction `mix()` peut produire quelques avertissements. Ignorez-les à ce stade : seuls les messages d'erreurs sont problématiques et nous y reviendrons plus tard. L'objet `res_01` contient donc les résultats de la décomposition polymodale. C'est une liste de 3 éléments dont seul le premier nous intéresse. Il s'appelle `parameters`, sans majuscule, même si `R` affiche son nom avec une majuscule. Vous pouvez le vérifier en tapant `str(res_01)`.  
 
 `str()` : affiche la **str**ucture interne d'objets complexes.] Il contient les valeurs ajustées pour les 3 paramètres des distributions Normales (`pi`, `mu` et `sigma`) pour chacune des 5 cohortes identifiées en mars 2010.
 
