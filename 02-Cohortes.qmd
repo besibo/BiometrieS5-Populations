@@ -108,7 +108,7 @@ Pour produire une courbe d'Allen, de nombreuses étapes sont nécessaires. Vous 
 1. Déterminer la taille moyenne de la coquille des individus de la cohorte d'intérêt, à chaque date d'échantillonnage, pour produire la *courbe de croissance*
 1. Déterminer l'abondance des individus de la cohorte d'intérêt, à chaque date d'échantillonnage, pour produire la *courbe de survie*
 
-Je vais présenter ci-dessous les étapes de cette procédure **pour une unique date d'échantillonnage** : march 2010. Vous devrez reproduire ces étapes pour les 9 autres dates d'échantillonnage.
+Je vais présenter ci-dessous les étapes de cette procédure **pour une unique date d'échantillonnage** : mars 2010. Vous devrez reproduire ces étapes pour les 9 autres dates d'échantillonnage.
 
 
 ## Sélection des données d'une date spécifique
@@ -123,7 +123,7 @@ Nas_01
 ```
 
 :::{.column-margin}
-`filter()` : permet de filtrer les lignes d'un tableau (ici `Nassarius`) pour ne conserver que celles qui remplissent une condition spécifiée par l'utilisateur (ici `date == "march_10"`)
+`filter()` : permet de filtrer les lignes d'un tableau (ici `Nassarius`) pour ne conserver que celles qui remplissent une condition spécifiée par l'utilisateur (ici `date == "2010-03"`)
 :::
 
 ```{r}
