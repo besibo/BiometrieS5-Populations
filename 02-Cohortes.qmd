@@ -68,8 +68,8 @@ library(mixdist)
 
 Pour importer les données, utilisez l'assistant d'importation de `RStudio`. Notez que :
 
-- Les colonnes sont séparées par des tabulations
-- Le symbole utilisé pour les décimales dans le fichier `Nassarius.csv` est la virgule
+- Les colonnes sont séparées par des virgule (le défault pour les fichiers csv)
+- Le symbole utilisé pour les décimales dans le fichier `Nassarius.csv` est le point (par défault dans R)
 
 Vous devrez donc spécifier correctement ces éléments pour pouvoir importer le fichier dans le logiciel. Si vous ne savez plus comment faire, reportez-vous au chapitre correspondant du [livre en ligne de Biométrie du semestre 3](https://besibo.github.io/BiometrieS3/04-DataWrangling.html#plaintext).
 
